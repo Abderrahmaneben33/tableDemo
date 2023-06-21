@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "amtablevuecomponenet": "^0.0.2",
+    "amtablevuecomponenet": "^0.0.7",
     "vue": "^3.3.4"
   },
   "devDependencies": {
