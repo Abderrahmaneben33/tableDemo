@@ -1,7 +1,6 @@
 
 <template>
   <div>
-
     <AmhVueTable :data="state.data" :columns="state.columns" :config="state.config">
       <template v-slot="{ column, row }">
         <div v-if="column.title == 'Actions'">
