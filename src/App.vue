@@ -13,9 +13,9 @@
 </template>
 <script setup>
 import { reactive } from "vue";
-import AmhVueTable from "amtablevuecomponenet";
+import AmhVueTable from "am_table_vue";
 // import css
-import "amtablevuecomponenet/dist/style.css";
+import "am_table_vue/dist/style.css";
 
 
 
