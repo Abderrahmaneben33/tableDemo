@@ -1,7 +1,11 @@
 
 <template>
   <div>
-    <AmhVueTable :data="state.data" :columns="state.columns" :config="state.config">
+    <AmhVueTable 
+         :data="state.data" 
+         :columns="state.columns" 
+         :config="state.config"
+          @SelectedRows-Changed="GetCheckedData" >
       <template v-slot="{ column, row }">
         <div v-if="column.title == 'Actions'">
           <button @click="add(row.name)">add</button>
@@ -187,6 +191,7 @@ const state = reactive({
     searchplaceholder: "Search in Table",
     EnableUseDarkMode: true,
     EnableCardsTemp: true,
+    EnableselectOptions: true,
     SearchInFields: ["name", "age", "date"],
     EnablePagination: true,
     PaginationConfig: {
@@ -198,5 +203,9 @@ const state = reactive({
 
 const add = (name) => { 
   console.log(name)
+}
+const GetCheckedData = (data) => {
+  // selected data 
+  console.log(data)
 }
 </script>
