@@ -1,29 +1,47 @@
 
 <template>
   <div>
-    <AmhVueTable 
-         :data="state.data" 
-         :columns="state.columns" 
-         :config="state.config"
-          @SelectedRows-Changed="GetCheckedData" >
-      <template v-slot="{ column, row }">
-        <div v-if="column.title == 'Actions'">
-          <button @click="add(row.name)">add</button>
-        </div>
-      </template>
-    </AmhVueTable>
+   <router-view></router-view>
   </div>
   
 </template>
 <script setup>
 import { reactive } from "vue";
 import AmhVueTable from "am_table_vue";
+
 // import css
 import "am_table_vue/dist/style.css";
 
-
+// import card from 'dynamic_cards_componenets';
+// import 'dynamic_cards_componenets/dist/card-component.css'
+import cadr from "./componenets/cadr.vue";
 
 const state = reactive({
+     cardsdata: [
+    {
+      title: 'card1',
+      number: 290,
+      icon: 'bx bxs-playlist',
+    },
+    {
+      title: 'card2',
+      number: 2600,
+      icon: 'bx bxs-ev-station',
+    },
+    {
+      title: 'd3',
+      number: 3500,
+      icon: 'fa fa-edit',
+      iconId: 'cube',
+    },
+    {
+      title: 'd4',
+      number: 2000,
+      icon: 'fa-solid fa-trash',
+      iconId: 'cube',
+      cardclass: 'FrCardclass'
+    }
+  ],
     data: [{
       name: 'ahmed',
     adresse:'casa',
@@ -209,3 +227,17 @@ const GetCheckedData = (data) => {
   console.log(data)
 }
 </script>
+
+<style>
+#cube{
+   background-color: #ffd4d4;
+   color: #ff7979;
+}
+#cube:hover{
+   background-color: #de6b6b;
+}
+
+.FrCardclass{
+   background: yellow;
+}
+</style>
